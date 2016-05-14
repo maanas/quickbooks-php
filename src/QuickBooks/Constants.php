@@ -30,20 +30,6 @@
  */
 define('QUICKBOOKS_TIMESTAMP', microtime(true));
 
-/**
- * 
- */
-define('QUICKBOOKS_BASEDIR', dirname(__FILE__));
-
-/**
- * Path separator for file paths/include/require paths
- * @var string
- */
-define('QUICKBOOKS_DIRECTORY_SEPARATOR', PATH_SEPARATOR);
-
-// Include path modifications (relative paths within library)
-ini_set('include_path', ini_get('include_path') . QUICKBOOKS_DIRECTORY_SEPARATOR . dirname(__FILE__));
-
 if (function_exists('date_default_timezone_get'))
 {
 	@date_default_timezone_get();
@@ -139,7 +125,7 @@ if (!defined('QUICKBOOKS_WSDL'))
 	 * Path to the QuickBooks WSDL file (the default WSDL is included with this package, you shouldn't need to override this generally) 
 	 * @var string
 	 */
-	define('QUICKBOOKS_WSDL', dirname(__FILE__) . '/QuickBooks/QBWebConnectorSvc.wsdl');
+	define('QUICKBOOKS_WSDL', dirname(__FILE__) . '/QBWebConnectorSvc.wsdl');
 }
 
 if (!defined('QUICKBOOKS_DEBUG'))
